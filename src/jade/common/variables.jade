@@ -1,0 +1,66 @@
+//- var styleUrl = 'style.css'
+//- var image_logo = 'images/logo.png'
+//- var script_bootstrap = 'scripts/bootstrap.min.js'
+//- var script_html5shiv = 'scripts/html5shiv.js'
+- var styleUrl = 'style/v64/style.css'
+- var image_logo = 'http://xcb.gxun.edu.cn/upload/2014_03/temp_14031312504180.png'
+- var script_bootstrap = 'http://xcb.gxun.edu.cn/upload/2014_03/temp_14031312494431.js'
+- var script_html5shiv = 'http://xcb.gxun.edu.cn/upload/2014_03/temp_14031312479266.js'
+
+mixin tolist(cid, showtime)
+  if showtime
+    - var showtime = 'true'
+  else
+    - var showtime = 'false'
+
+  !='<%=TopList(' + cid + ',"sort","new",8,54,false,false,' + showtime + ',false,false,false,false,1)%>'
+
+mixin column(cid, title)
+  section
+    header
+      h3.title
+        a(href='list.aspx?cid=' + cid)=title
+    .articles
+      +articles(cid)
+
+mixin news(cid)
+  !='<%=TopList(' + cid + ',"sort","new",8,54,false,false,true,false,false,false,false,1)%>'
+  //-
+    ul.nl
+      li
+        span 09/28/2012
+        a(href) 关于2012—2013学年度上学期理论学习的通知
+      li
+        span 09/28/2012
+        a(href) 关于评选2010—2011年度宣传工作先进单位和先进个人的通知
+      li
+        span 09/28/2012
+        a(href) 关于2011—2012学年度上学期理论学习的通知
+      li
+        span 09/28/2012
+        a(href) 关于2010—2011学年度第二学期理论学习的通知
+      li
+        span 09/28/2012
+        a(href) “广西民族大学2010年十大新闻事件”评选启事
+      li
+        span 09/28/2012
+        a(href) 关于2010—2011学年度第一学期理论学习的通知
+
+mixin articles(cid)
+  !='<%=TopList(' + cid + ',"sort","new",8,54,false,false,false,false,false,false,false,1)%>'
+  //-
+    ul
+      li
+        a(href) 中共广西民族大学委员会理论学
+      li
+        a(href) 广西民族大学师德建设规范
+      li
+        a(href) 广西民族大学新闻宣传管理办法
+      li
+        a(href) 广西民族大学新闻网站、电台、电视台管理办法
+      li
+        a(href) 《广西民族大学校报》管理办法
+      li
+        a(href) 广西民族大学校园文化建设方案
+      li
+        a(href) 广西民族大学校园张贴广告悬挂横幅摆设展版的管理规定

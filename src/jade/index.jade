@@ -1,0 +1,118 @@
+include common/variables
+|<%@Page Language="C#" Inherits="IWMS.Pages.Default"%>
+doctype html
+html
+  head
+    title 广西民族大学党委宣传部
+    meta(charset='utf-8')
+    link(rel='stylesheet' href=styleUrl)
+    // [if lt IE 9]
+    script(src=script_html5shiv)
+    // [endif]
+  body
+    header.header
+      .container
+        figure
+          a(href='http://www.gxun.edu.cn/')
+            img(src=image_logo)
+        nav
+          ul
+            li
+              a(href='/') 首页
+            li
+              a(href='list.aspx?cid=2') 部门概况
+            li
+              a(href='list.aspx?cid=3') 学习园地
+            li
+              a(href='list.aspx?cid=4') 理论研究
+            li
+              a(href='list.aspx?cid=5') 思想教育
+            li
+              a(href='list.aspx?cid=6') 信息动态
+            li
+              a(href='list.aspx?cid=7') 精神文明
+            li
+              a(href='list.aspx?cid=17') 普法教育
+            li
+              a(href='list.aspx?cid=18') 规章制度
+            li
+              a(href='list.aspx?cid=19') 办事指南
+
+    .container
+      figure.image-main
+      nav.subnav
+        .left
+          a(href='list.aspx?cid=6') 信息动态
+        .right
+          ul
+            li.active
+              a(href='list.aspx?cid=4' data-target='#c4') 理论研究
+            li
+              a(href='list.aspx?cid=8' data-target='#c8') 校园文化
+            li
+              a(href='list.aspx?cid=18' data-target='#c18') 规章制度
+        .clearfix
+
+      .row
+        .news
+          +news(6)
+        .panes
+          #c4.articles.active
+            +articles(4)
+          #c8.articles
+            +articles(8)
+          #c18.articles
+            +articles(18)
+        .clearfix
+
+      .row
+        +column(2, '部门概况')
+        +column(3, '学习园地')
+        +column(17, '普法教育')
+        .clearfix
+
+      .row
+        +column(5, '思想教育')
+        +column(7, '精神文明')
+        +column(19, '办事指南')
+        .clearfix
+
+      .links
+        header 友情链接
+        ul
+          li
+            a(href='http://www.people.com.cn/') 中央宣传部
+          li
+            a(href='http://www.gxnews.com.cn/') 自治区党委宣传部
+          li
+            a(href='http://jcyk.myclub2.com/Beijin2008/') 自治区高校工委宣传部
+          li
+            a(href='http://bdxc.pku.edu.cn/') 北大宣传部
+          li
+            a(href='http://xcb.ruc.edu.cn/') 中国人民大学宣传部
+          li
+            a(href='http://news.tsinghua.edu.cn/xcb/') 清华大学宣传部
+          li
+            a(href='http://xcb.nankai.edu.cn/') 南开大学宣传部
+          li
+            a(href='http://xcb.gxnu.edu.cn/Index.asp') 广西师范大学宣传部
+          li
+            a(href='http://web.gxmu.edu.cn/gxmuks/xcb2/xcb/Index.asp') 广西医科大学宣传部
+          li
+            a(href='http://www.glite.edu.cn/Git/Department/Index.asp') 桂林理工大学宣传部
+          li
+            a(href='http://210.36.18.52:81/') 广西大学宣传部
+        .clearfix
+    
+    footer.footer.container
+      p.contact 地址：广西民族大学大学生活动中心7楼 邮编：530006 电话：0771-3260103
+      p.powered
+        |powered by
+        a(href='http://bbs.gxun.cn/portal.php') 相思湖网站
+
+    script(src='http://cdn.staticfile.org/jquery/1.11.0/jquery.min.js')
+    script(src=script_bootstrap)
+    script.
+      $('.subnav li a').hover( function(){
+        $(this).tab('show');
+      });

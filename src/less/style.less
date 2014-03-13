@@ -1,0 +1,242 @@
+//@image-header-bg: 'images/header-bg.jpg';
+//@image-footer-bg: 'images/footer-bg.jpg';
+//@image-main: 'images/main.jpg';
+@image-header-bg: 'http://xcb.gxun.edu.cn/upload/2014_03/temp_14031312504357.jpg';
+@image-footer-bg: 'http://xcb.gxun.edu.cn/upload/2014_03/temp_14031312493919.jpg';
+@image-main: 'http://xcb.gxun.edu.cn/upload/2014_03/temp_14031312505319.jpg';
+@color-light: #ecf0f1;
+@color-dark: #2c3e50;
+
+body {
+  margin: 0;
+  background-color: @color-light;
+}
+
+.container {
+  width: 980px;
+  margin: auto;
+  background-color: #fff;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.header {
+  background: url(@image-header-bg);
+  height: 95px;
+
+  figure {
+    margin-top: 8px;
+    float: left;
+
+    img {
+      border: 0;
+    }
+  }
+
+  nav {
+    float: right;
+
+    ul {
+      list-style: none;
+
+      li {
+        float: left;
+        padding: 4px;
+
+        a {
+          font-family: '微软雅黑';
+          font-size: 14px;
+          color: @color-light;
+          padding-bottom: 2px;
+          text-decoration: none;
+
+          &:hover {
+            border-bottom: 2px solid;
+          }
+        }
+      }
+    }
+  }
+}
+
+.image-main {
+  height: 274px;
+  margin: 0;
+  background: url(@image-main);
+}
+
+.subnav {
+  background: url(@image-header-bg);
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: @color-light;
+    padding: 8px 22px;
+    font-family: '微软雅黑';
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+
+    ul {
+      list-style: none;
+      margin: 0;
+
+      li {
+        float: left;
+
+        &.active {
+          a {
+            background: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.news, .articles {
+  font-size: 14px;
+  color: @color-dark;
+  height: 220px;
+  margin: 0 0 20px 8px;
+
+  ul {
+    margin: 0;
+    padding: 8px 16px;
+    list-style: none;
+  }
+
+  li {
+    padding: 4px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  a {
+    color: @color-dark;
+  }
+}
+
+.news {
+  width: 640px;
+  float: left;
+
+  span {
+    float: right;
+  }
+}
+
+.articles {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+
+  li {
+    padding: 8px 0 2px 0;
+    border-bottom: 1px dashed;
+  }
+}
+
+.panes {
+  width: 320px;
+  float: right;
+  padding-right: 8px;
+
+  .articles {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.row section {
+  width: 320px;
+  float: left;
+
+  &:first-child {
+    margin-left: 8px;
+  }
+
+  .title {
+    margin: 0;
+    padding-left: 22px;
+    color: darkred;
+    font-family: '微软雅黑';
+    
+    a {
+      color: darkred;
+    }
+  }
+}
+
+.links {
+  padding: 0 20px 20px 20px;
+
+  header {
+    font-family: '微软雅黑';
+    padding-bottom: 4px;
+    text-align: right;
+    border-bottom: 1px solid #7f8c8d;
+    color: #2c3e50;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      float: left;
+
+      a {
+        text-decoration: none;
+        color: #7f8c8d;
+        padding: 0 4px;
+        font-size: 12px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background: url(@image-footer-bg);
+  height: 157px;
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: -40px;
+
+  .contact {
+    margin: 0;
+    padding-top: 80px;
+  }
+
+  .powered {
+    font-style: italic;
+
+    a {
+      color: #e74c3c;
+      font-size: 0.8em;
+      padding-left: 4px;
+    }
+  }
+}
